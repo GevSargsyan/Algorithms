@@ -6,9 +6,11 @@ namespace AlgorithmsAndDataStructures
     {
         static void Main(string[] args)
         {
+            long[] phoneNumbers = new long[] { +374123456L, +374001234L, +374123456L, +374374374L, +374001234L };
+            Console.WriteLine(Arrays.DistinctArray(phoneNumbers).ToArrayString());
 
-            var a = Arrays.FindNMaxMinValues(new int[] { 1, 23, 4, 5, 6, 7, 8 }, 3);
-            Console.WriteLine(a.ToArrayString());
+            int[] numbers = new int[] { 1, 2, 2, 3, 4, 4, 5 };
+            Console.WriteLine(Arrays.DistinctSorted(numbers).ToArrayString());
         }
     }
 }

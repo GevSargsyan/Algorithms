@@ -57,5 +57,47 @@
 
         #endregion
 
+        #region Distinct
+        public static long[] DistinctArray(long[] arr)
+        {
+            List<long> longs = new List<long>();
+            bool alreadyExists;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                alreadyExists = false;
+                for (int j = 0; j < longs.Count; j++)
+                {
+                    if (longs[j] == arr[i])
+                    {
+                        alreadyExists = true;
+                        break;
+                    }
+                }
+
+                if (!alreadyExists)
+                {
+                    longs.Add(arr[i]);
+                }
+            }
+            return longs.ToArray();
+        }
+
+        public static int[] DistinctSorted(int[] arr)
+        {
+            int previousNum = arr[0];
+            List<int> ints = new List<int>();
+            ints.Add(previousNum);
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] != previousNum)
+                {
+                    previousNum = arr[i];
+                    ints.Add(previousNum);
+                }
+            }
+            return ints.ToArray();
+        }
+
+        #endregion
     }
 }
