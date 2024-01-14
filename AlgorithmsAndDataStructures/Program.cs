@@ -1,25 +1,29 @@
-﻿using System.Diagnostics;
-
-namespace AlgorithmsAndDataStructures
+﻿namespace AlgorithmsAndDataStructures
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //BinarySearch.BinarySearchMethod(new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 }, 15);
 
-            List<int> list = new List<int>();
-            for (int i = 0; i < 1000000000; i++)
+
+            List<Player> players = new()
             {
-                list.Add(i);
-            }
+                new Player(1000),//0
+                new Player(1200),//1
+                new Player(1300),//2
+                new Player(1500),//3
+                new Player(1500),//4
+                new Player(1500),//5
+                new Player(1600),//6
+                new Player(1700),//7
+                new Player(2000),//8
+                new Player(2200) //9
+            };
 
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            int index = list.IndexOf(100000000);//00:00:00.0401065
-            BinarySearch.BinarySearchMethod(list, 100000000);// 00:00:00.0003057    (LOG2^N);
-            stopwatch.Stop();
-            Console.WriteLine(stopwatch.Elapsed);
+
+            var player = new Player(2500);
+            int index = BinarySearch.FindFirstInsertIndex(players, player);
+            players.Insert(index, player);
 
         }
     }
