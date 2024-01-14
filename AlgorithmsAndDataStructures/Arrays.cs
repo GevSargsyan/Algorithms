@@ -98,6 +98,30 @@
             return ints.ToArray();
         }
 
+
+
+        #endregion
+
+        #region SkipNextTwo
+        public static List<int> SkipNextTwo(int[] arr)
+        {
+            List<int> ints = new();
+
+            for (int i = 0, j = 0; i < arr.Length; i++, j++)
+            {
+                if (j >= 0 && j < 2)
+                {
+                    ints.Add(arr[i]);
+                }
+                if (j == 2)
+                {
+                    j = -2;
+                }
+
+            }
+
+            return ints;
+        }
         #endregion
     }
 }
